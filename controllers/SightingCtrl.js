@@ -2,15 +2,15 @@ var Sighting = require('../models/Sighting');
 
 module.exports = {
 
-  create: function(req, res) {
-    var newSighting = new Sighting(req.body);
+  create: function(req, res) { /////manipulate before you create the document
+    var newSighting = new Sighting(req.body);////this is a document. it is an object, it returns an object.
     newSighting.save(function(err, result) {
       if (err) return res.status(500).send(err);
       else res.send(result);
     });
   },
 
-  read: function(req, res) {
+  read: function(req, res) { /////to find something you create a query
     Sighting.find(req.query)
     .exec(function(err, result) {
       if (err) return res.status(500).send(err);

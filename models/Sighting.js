@@ -21,4 +21,4 @@ var sightingSchema = new mongoose.Schema ({
   numberSeen: { type: Number, min: 1 }
 });
 
-module.exports = mongoose.model('Sighting', sightingSchema);
+module.exports = mongoose.model('bob', sightingSchema);

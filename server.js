@@ -11,6 +11,7 @@ var SightingCtrl = require('./controllers/SightingCtrl');
 var app = express();
 
 // Express Middleware
+app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -26,7 +27,7 @@ var mongoUri = 'mongodb://localhost:27017/mini-birds-mongoose';
 
 mongoose.set('debug', true);
 mongoose.connect(mongoUri);
-mongoose.connection.once('open', function() {
+mongoose.connection.once('open', function() {  ////event listener
   console.log('connected to mongoDB at: ', mongoUri);
 });
 
