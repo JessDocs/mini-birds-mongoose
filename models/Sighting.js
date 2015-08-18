@@ -1,12 +1,9 @@
 var mongoose = require('mongoose');
 
-var sightingSchema = new mongoose.Schema ({
-  name: { type: String, lowercase: true },
+var sightingSchema = new mongoose.Schema ({ 
+  name: { type: String },
   order: { type: String, lowercase: true, maxlength: 20 },
-  status: {
-    type: String,
-    lowercase: true,
-    enum: [
+  status: { type: String, lowercase: true, enum: [
       'extinct',
       'extinct in the wild',
       'critically endangered',
@@ -17,8 +14,10 @@ var sightingSchema = new mongoose.Schema ({
       'least concern'
     ]
   },
-  confirmed: { type: Boolean, default: false },
-  numberSeen: { type: Number, min: 1 }
-});
+  confirmed: { type: Boolean, },
+  numberSeen: { type: Number, min: 1 },
+  
 
-module.exports = mongoose.model('bob', sightingSchema);
+});
+var collectionName = "user";
+module.exports = mongoose.model("user", sightingSchema, collectionName);

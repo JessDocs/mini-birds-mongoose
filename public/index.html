@@ -5,9 +5,12 @@
     </head>
     <body ng-controller='MainCtrl'>
         
-        <input type="text" placeholder="name" ng-model="bird.name"/>
+        
+        <input type="text" placeholder="name" ng-model="bird.name"/> 
         <input type="text" placeholder="order" ng-model="bird.order"/>
-        <input type="text" placeholder="status" ng-model="bird.status"/>
+        <input type="text" placeholder="status" ng-model="bird.status"/>  <!-- ng-model would allow for 2-way binding -->
+
+
      <br>
     <div>      
         <button ng-click="createBird(bird)">Create Bird</button> <!--  must pass in the object into the ng-click. -->
@@ -24,11 +27,11 @@
             <li>least concern</li>
             <br>
             <br>
-        <div ng-repeat="bird in birds">
+        <div ng-repeat="bird in birds"><!-- One way bind -->
             {{bird.name}}
             <button ng-click="deleteBird($index)">Delete Bird</button>
         </div>
-        <br>
+        <br> --> -->
         <!-- <div>
             
 
@@ -37,7 +40,7 @@
         
         
             <!-- scripts -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/controllers/MainCtrl.js"></script>
         <script type="text/javascript" src="js/services/dataService.js"></script>
